@@ -1,0 +1,24 @@
+# Sample File: https://raw.githubusercontent.com/containous/traefik/master/traefik.sample.toml
+################################################################
+# Global configuration
+################################################################
+logLevel = "DEBUG"
+defaultEntryPoints = ["http", "https"]
+#[entryPoints]
+#  [entryPoints.http]
+#  address = ":80"
+#  [entryPoints.https]
+#  address = ":443"
+
+################################################################
+# Web configuration backend
+################################################################
+[web]
+address = ":8080"
+
+################################################################
+# Docker configuration backend
+################################################################
+[docker]
+domain = "docker.localhost"
+watch = true
