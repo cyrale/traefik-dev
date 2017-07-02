@@ -1,11 +1,7 @@
 .idea/
+.vscode/
 
-### VisualStudioCode
-.vscode/*
-#!.vscode/settings.json
-#!.vscode/tasks.json
-#!.vscode/launch.json
-#!.vscode/extensions.json
+root/etc/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Windows template
