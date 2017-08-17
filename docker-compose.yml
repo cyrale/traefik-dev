@@ -3,7 +3,7 @@ version: '3'
 services:
   reverse-proxy:
     image: traefik
-    command: --web --docker --docker.domain=docker.localhost --docker.watch \
+    command: --web --docker --docker.domain=docker.dev --docker.watch \
       --logLevel=DEBUG \
       --defaultEntryPoints='http,https' \
       --entryPoints='Name:http Address::80' \
@@ -27,7 +27,7 @@ services:
       - webgateway-data:/etc/traefik/acme/
     labels:
       - "traefik.backend=reverse-proxy"
-      - "traefik.frontend.rule=Host:reverse-proxy.docker.localhost"
+      - "traefik.frontend.rule=Host:reverse-proxy.docker.dev"
 
 networks:
   webgateway:
