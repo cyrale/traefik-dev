@@ -22,8 +22,10 @@ services:
       - webgateway
       - default
     labels:
+      - "traefik.enable=true"
       - "traefik.backend=whoami"
       - "traefik.frontend.rule=Host:whoami.docker.dev"
+      - "traefik.docker.network=traefikforwebdev_webgateway"
 
 networks:
   webgateway:
