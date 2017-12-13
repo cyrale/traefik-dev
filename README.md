@@ -8,7 +8,7 @@ For more information on Træfik, see [https://traefik.io/](https://traefik.io/)
 $ docker-compose up -d
 ```
 
-In a browser you may open `http://develhost:8080` to access Træfik's dashboard and observe the following magic. For Windows users, replace `develhost` by your docker machine IP obtained from `docker-machine ip default`.
+In a browser you may open `http://localhost:8080` to access Træfik's dashboard and observe the following magic. For Windows users, replace `localhost` by your docker machine IP obtained from `docker-machine ip default`.
 
 Now, create new services like that:
 
