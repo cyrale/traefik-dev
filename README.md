@@ -25,6 +25,7 @@ services:
       - "traefik.enable=true"
       - "traefik.backend=whoami"
       - "traefik.frontend.rule=Host:whoami.devel"
+      - "traefik.frontend.entryPoints=http"
       - "traefik.docker.network=traefikforwebdev_webgateway"
 
 networks:
