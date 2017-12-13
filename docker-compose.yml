@@ -3,7 +3,7 @@ version: '3'
 services:
   reverse-proxy:
     image: traefik
-    command: --web --docker --docker.domain=local --docker.watch \
+    command: --web --docker --docker.domain=devel --docker.watch \
       --logLevel=DEBUG \
       --defaultEntryPoints='http,https' \
       --entryPoints='Name:http Address::80' \
@@ -29,7 +29,7 @@ services:
     labels:
       - "traefik.enable=false"
       - "traefik.backend=reverse-proxy"
-      - "traefik.frontend.rule=Host:reverse-proxy.local"
+      - "traefik.frontend.rule=Host:reverse-proxy.devel"
       - "traefik.frontend.entryPoints=http"
 
 networks:
