@@ -24,7 +24,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.backend=whoami"
-      - "traefik.frontend.rule=Host:whoami.docker.dev"
+      - "traefik.frontend.rule=Host:whoami.local"
       - "traefik.docker.network=traefikforwebdev_webgateway"
 
 networks:
@@ -36,13 +36,13 @@ networks:
 For Linux users and maybe OSX users, setup dnsmasq like that:
 ```bash
 $ sudo vim /etc/dnsmasq.d/01_docker
-address=/docker.dev/127.0.0.1
+address=/local/127.0.0.1
 
 $ sudo service dnsmasq restart
 ``` 
 
 For all users without dnsmasq, insert the following line in your `/etc/hosts`:
 ```
-192.168.99.100  whoami.docker.dev
+192.168.99.100  whoami.local
 ```
 Where `192.168.99.100` is your docker machine IP, it could be `127.0.0.1`
