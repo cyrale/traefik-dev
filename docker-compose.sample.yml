@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    image: emilevauge/whoami
+    networks:
+      - webgateway
+      - default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=whoami"
+      - "traefik.frontend.rule=Host:whoami.devel"
+      - "traefik.frontend.entryPoints=http"
+      - "traefik.docker.network=traefikforwebdev_webgateway"
+
+networks:
+  webgateway:
+    external:
+      name: traefikforwebdev_webgateway
